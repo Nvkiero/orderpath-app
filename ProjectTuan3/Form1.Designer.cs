@@ -47,7 +47,7 @@
             lb_dangnhap.Location = new Point(415, 13);
             lb_dangnhap.Margin = new Padding(4, 0, 4, 0);
             lb_dangnhap.Name = "lb_dangnhap";
-            lb_dangnhap.Size = new Size(172, 41);
+            lb_dangnhap.Size = new Size(205, 48);
             lb_dangnhap.TabIndex = 0;
             lb_dangnhap.Text = "Đăng nhập";
             lb_dangnhap.Click += label1_Click;
@@ -59,7 +59,7 @@
             lb_tendangnhap.Location = new Point(249, 95);
             lb_tendangnhap.Margin = new Padding(4, 0, 4, 0);
             lb_tendangnhap.Name = "lb_tendangnhap";
-            lb_tendangnhap.Size = new Size(229, 28);
+            lb_tendangnhap.Size = new Size(275, 32);
             lb_tendangnhap.TabIndex = 1;
             lb_tendangnhap.Text = "Username/ Gmail/ SĐT";
             lb_tendangnhap.Click += label2_Click;
@@ -71,7 +71,7 @@
             lb_passwd.Location = new Point(249, 219);
             lb_passwd.Margin = new Padding(4, 0, 4, 0);
             lb_passwd.Name = "lb_passwd";
-            lb_passwd.Size = new Size(101, 28);
+            lb_passwd.Size = new Size(122, 32);
             lb_passwd.TabIndex = 2;
             lb_passwd.Text = "Password";
             // 
@@ -85,6 +85,7 @@
             btn_dangnhap.TabIndex = 3;
             btn_dangnhap.Text = ">Đăng Nhập<";
             btn_dangnhap.UseVisualStyleBackColor = true;
+            btn_dangnhap.Click += btn_dangnhap_Click;
             // 
             // btn_quenmatkhau
             // 
@@ -115,7 +116,7 @@
             tb_tendangnhap.Location = new Point(249, 158);
             tb_tendangnhap.Margin = new Padding(4, 5, 4, 5);
             tb_tendangnhap.Name = "tb_tendangnhap";
-            tb_tendangnhap.Size = new Size(314, 34);
+            tb_tendangnhap.Size = new Size(314, 39);
             tb_tendangnhap.TabIndex = 6;
             tb_tendangnhap.MaskInputRejected += tb_tendangnhap_MaskInputRejected;
             // 
@@ -124,12 +125,12 @@
             tb_passwd.Location = new Point(249, 283);
             tb_passwd.Margin = new Padding(4, 5, 4, 5);
             tb_passwd.Name = "tb_passwd";
-            tb_passwd.Size = new Size(314, 34);
+            tb_passwd.Size = new Size(314, 39);
             tb_passwd.TabIndex = 7;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1100, 630);
             Controls.Add(tb_passwd);
