@@ -32,7 +32,6 @@
             lb_tendangnhap = new Label();
             lb_passwd = new Label();
             btn_dangnhap = new Button();
-            btn_quenmatkhau = new Button();
             button3 = new Button();
             tb_tendangnhap = new MaskedTextBox();
             tb_passwd = new MaskedTextBox();
@@ -87,18 +86,6 @@
             btn_dangnhap.UseVisualStyleBackColor = true;
             btn_dangnhap.Click += btn_dangnhap_Click;
             // 
-            // btn_quenmatkhau
-            // 
-            btn_quenmatkhau.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            btn_quenmatkhau.ForeColor = Color.FromArgb(128, 128, 255);
-            btn_quenmatkhau.Location = new Point(249, 423);
-            btn_quenmatkhau.Margin = new Padding(4, 5, 4, 5);
-            btn_quenmatkhau.Name = "btn_quenmatkhau";
-            btn_quenmatkhau.Size = new Size(244, 56);
-            btn_quenmatkhau.TabIndex = 4;
-            btn_quenmatkhau.Text = "Quên mật khẩu?";
-            btn_quenmatkhau.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 163);
@@ -136,7 +123,6 @@
             Controls.Add(tb_passwd);
             Controls.Add(tb_tendangnhap);
             Controls.Add(button3);
-            Controls.Add(btn_quenmatkhau);
             Controls.Add(btn_dangnhap);
             Controls.Add(lb_passwd);
             Controls.Add(lb_tendangnhap);
@@ -155,7 +141,6 @@
         private Label lb_tendangnhap;
         private Label lb_passwd;
         private Button btn_dangnhap;
-        private Button btn_quenmatkhau;
         private Button button3;
         private MaskedTextBox tb_tendangnhap;
         private MaskedTextBox tb_passwd;

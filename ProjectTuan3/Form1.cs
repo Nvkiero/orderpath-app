@@ -24,7 +24,7 @@ namespace ProjectTuan3
 
         private void btn_dangnhap_Click(object sender, EventArgs e)
         {
-            //otrweoithwuetuiu
+            
         }
     }
 }
