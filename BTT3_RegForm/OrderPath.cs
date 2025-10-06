@@ -8,7 +8,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -160,7 +159,7 @@ namespace BTT3_RegForm
             string email = txb_email.Text.Trim();
             string phone = txb_sdt.Text.Trim();
             string address = txb_address.Text.Trim();
-            string username = txb_user.Text.Trim();
+            string username = txb_userreal.Text.Trim();
             string pass = txb_pass.Text;
             string pass2 = txb_pass2.Text;
 
@@ -174,10 +173,10 @@ namespace BTT3_RegForm
             if (pass != pass2) errors.Add("Xác nhận mật khẩu sai");
 
             if (errors.Count > 0)
-                {
-                    MessageBox.Show(string.Join(Environment.NewLine, errors), "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+            {
+                MessageBox.Show(string.Join(Environment.NewLine, errors), "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
         }
 

@@ -57,6 +57,10 @@
             groupBox7 = new GroupBox();
             groupBox8 = new GroupBox();
             groupBox9 = new GroupBox();
+            groupBox11 = new GroupBox();
+            textBox2 = new TextBox();
+            txb_userreal = new TextBox();
+            groupBox10 = new GroupBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -66,6 +70,8 @@
             groupBox7.SuspendLayout();
             groupBox8.SuspendLayout();
             groupBox9.SuspendLayout();
+            groupBox11.SuspendLayout();
+            groupBox10.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -120,7 +126,7 @@
             // 
             groupBox1.Controls.Add(rdbtn_female);
             groupBox1.Controls.Add(rdbtn_male);
-            groupBox1.Location = new Point(665, 142);
+            groupBox1.Location = new Point(665, 130);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
@@ -162,7 +168,7 @@
             groupBox2.Controls.Add(cbbox_day);
             groupBox2.Controls.Add(cbbox_month);
             groupBox2.Controls.Add(cbbox_year);
-            groupBox2.Location = new Point(207, 130);
+            groupBox2.Location = new Point(207, 118);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
@@ -185,7 +191,7 @@
             // cbbox_month
             // 
             cbbox_month.FormattingEnabled = true;
-            cbbox_month.Items.AddRange(new object[] { "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12" });
+            cbbox_month.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
             cbbox_month.Location = new Point(157, 28);
             cbbox_month.Margin = new Padding(3, 2, 3, 2);
             cbbox_month.Name = "cbbox_month";
@@ -234,7 +240,7 @@
             // 
             // btn_signup
             // 
-            btn_signup.Location = new Point(426, 586);
+            btn_signup.Location = new Point(423, 648);
             btn_signup.Name = "btn_signup";
             btn_signup.Size = new Size(207, 44);
             btn_signup.TabIndex = 11;
@@ -246,7 +252,7 @@
             // 
             llabel_login.AutoSize = true;
             llabel_login.LinkColor = Color.Black;
-            llabel_login.Location = new Point(559, 644);
+            llabel_login.Location = new Point(572, 695);
             llabel_login.Name = "llabel_login";
             llabel_login.Size = new Size(100, 25);
             llabel_login.TabIndex = 12;
@@ -257,11 +263,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(394, 644);
+            label2.Font = new Font("Segoe UI", 9F);
+            label2.Location = new Point(390, 695);
             label2.Name = "label2";
-            label2.Size = new Size(144, 25);
+            label2.Size = new Size(176, 25);
             label2.TabIndex = 13;
-            label2.Text = "Đã có tài khoản?";
+            label2.Text = "Bạn đã có tài khoản?";
             // 
             // btn_showp1
             // 
@@ -310,7 +317,7 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(txb_email);
-            groupBox3.Location = new Point(207, 210);
+            groupBox3.Location = new Point(209, 193);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(651, 71);
             groupBox3.TabIndex = 18;
@@ -330,7 +337,7 @@
             // groupBox5
             // 
             groupBox5.Controls.Add(txb_sdt);
-            groupBox5.Location = new Point(207, 290);
+            groupBox5.Location = new Point(207, 270);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(651, 71);
             groupBox5.TabIndex = 19;
@@ -352,7 +359,7 @@
             groupBox7.Controls.Add(btn_showp1);
             groupBox7.Controls.Add(btn_hidep1);
             groupBox7.Controls.Add(txb_pass);
-            groupBox7.Location = new Point(207, 432);
+            groupBox7.Location = new Point(207, 494);
             groupBox7.Name = "groupBox7";
             groupBox7.Size = new Size(651, 71);
             groupBox7.TabIndex = 20;
@@ -364,7 +371,7 @@
             groupBox8.Controls.Add(btn_showp2);
             groupBox8.Controls.Add(btn_hidep2);
             groupBox8.Controls.Add(txb_pass2);
-            groupBox8.Location = new Point(207, 509);
+            groupBox8.Location = new Point(207, 571);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(651, 71);
             groupBox8.TabIndex = 21;
@@ -375,18 +382,56 @@
             // 
             groupBox9.Controls.Add(txb_address);
             groupBox9.Controls.Add(groupBox6);
-            groupBox9.Location = new Point(207, 367);
+            groupBox9.Location = new Point(207, 340);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(651, 71);
             groupBox9.TabIndex = 21;
             groupBox9.TabStop = false;
             groupBox9.Text = "Địa chỉ";
             // 
+            // groupBox11
+            // 
+            groupBox11.Controls.Add(textBox2);
+            groupBox11.Location = new Point(425, 65);
+            groupBox11.Name = "groupBox11";
+            groupBox11.Size = new Size(651, 71);
+            groupBox11.TabIndex = 19;
+            groupBox11.TabStop = false;
+            groupBox11.Text = "Tên đăng nhập";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(0, 29);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(651, 31);
+            textBox2.TabIndex = 6;
+            // 
+            // txb_userreal
+            // 
+            txb_userreal.Location = new Point(0, 29);
+            txb_userreal.Margin = new Padding(3, 2, 3, 2);
+            txb_userreal.Name = "txb_userreal";
+            txb_userreal.Size = new Size(651, 31);
+            txb_userreal.TabIndex = 10;
+            // 
+            // groupBox10
+            // 
+            groupBox10.Controls.Add(txb_userreal);
+            groupBox10.Controls.Add(groupBox11);
+            groupBox10.Location = new Point(207, 417);
+            groupBox10.Name = "groupBox10";
+            groupBox10.Size = new Size(651, 71);
+            groupBox10.TabIndex = 22;
+            groupBox10.TabStop = false;
+            groupBox10.Text = "Tên đăng nhập";
+            // 
             // OrderPath
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1076, 675);
+            ClientSize = new Size(1056, 736);
+            Controls.Add(groupBox10);
             Controls.Add(groupBox9);
             Controls.Add(label1);
             Controls.Add(groupBox8);
@@ -420,6 +465,10 @@
             groupBox8.PerformLayout();
             groupBox9.ResumeLayout(false);
             groupBox9.PerformLayout();
+            groupBox11.ResumeLayout(false);
+            groupBox11.PerformLayout();
+            groupBox10.ResumeLayout(false);
+            groupBox10.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -455,5 +504,9 @@
         private GroupBox groupBox7;
         private GroupBox groupBox8;
         private GroupBox groupBox9;
+        private GroupBox groupBox11;
+        private TextBox textBox2;
+        private TextBox txb_userreal;
+        private GroupBox groupBox10;
     }
 }
