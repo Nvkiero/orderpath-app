@@ -183,7 +183,7 @@ namespace BTT3_RegForm
 
         private void llabel_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            //ok
         }
     }
 }
