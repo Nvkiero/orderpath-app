@@ -12,7 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-    
+using System.Net.WebSockets;
+
 
 namespace BTT3_RegForm
 {
@@ -32,11 +33,13 @@ namespace BTT3_RegForm
             txb_pass.MaxLength = 50;
             txb_pass2.MaxLength = 30;
             txb_address.MaxLength = 30;
+            rdbtn_female.Checked = false;
+            rdbtn_male.Checked = false;
         }
 
         private void txb_name_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbbox_day_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,10 +133,57 @@ namespace BTT3_RegForm
             }
         }
 
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)) return false;
+            string condition = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, condition, RegexOptions.IgnoreCase);
+        }
+        private DateTime? GetDoB()
+        {
+            int d, m, y;
+            if (int.TryParse(cbbox_day.Text, out d) &&
+                int.TryParse(cbbox_month.Text, out m) &&
+                int.TryParse(cbbox_year.Text, out y))
+            {
+                try { return new DateTime(y, m, d); }
+                catch { return null; }
+            }
+            return null;
+        }
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
+            string fullName = txb_name.Text.Trim();
+            DateTime? dob = GetDoB();
+            string gender = rdbtn_male.Checked ? "Nam" : rdbtn_female.Checked ? "Nữ" : null;
+            string email = txb_email.Text.Trim();
+            string phone = txb_sdt.Text.Trim();
+            string address = txb_address.Text.Trim();
+            string username = txb_user.Text.Trim();
+            string pass = txb_pass.Text;
+            string pass2 = txb_pass2.Text;
 
+            var errors = new List<string>();
+            if (string.IsNullOrWhiteSpace(fullName)) errors.Add("Họ và tên không được để trống");
+            if (!dob.HasValue) errors.Add("Ngày sinh không hợp lệ");
+            if (string.IsNullOrWhiteSpace(gender)) errors.Add("Chưa chọn giới tính");
+            if (string.IsNullOrWhiteSpace(email) || !IsValidEmail(email)) errors.Add("Email không hợp lệ");
+            if (string.IsNullOrWhiteSpace(username)) errors.Add("Username không được để trống");
+            if (string.IsNullOrWhiteSpace(pass)) errors.Add("Mật khẩu không được để trống");
+            if (pass != pass2) errors.Add("Xác nhận mật khẩu sai");
+
+            if (errors.Count > 0)
+                {
+                    MessageBox.Show(string.Join(Environment.NewLine, errors), "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+        }
+
+        private void llabel_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
         }
     }
 }

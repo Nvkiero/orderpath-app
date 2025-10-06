@@ -120,11 +120,11 @@
             // 
             groupBox1.Controls.Add(rdbtn_female);
             groupBox1.Controls.Add(rdbtn_male);
-            groupBox1.Location = new Point(681, 138);
+            groupBox1.Location = new Point(665, 142);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(177, 67);
+            groupBox1.Size = new Size(193, 63);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Giới tính";
@@ -252,6 +252,7 @@
             llabel_login.TabIndex = 12;
             llabel_login.TabStop = true;
             llabel_login.Text = "Đăng nhập";
+            llabel_login.LinkClicked += llabel_login_LinkClicked;
             // 
             // label2
             // 
