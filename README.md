@@ -32,5 +32,7 @@
 	+ enter để đăng nhập: Ứng dụng kiểm tra thông tin và hiển thị thông báo
 
 ## Giao diện
-*(Chèn ảnh Form Login & Register ở đây)*
+![Login](https://github.com/user-attachments/assets/9f3d02cb-0ecc-4f66-9c53-0b5b39cd2a8d)
+
+![SignUp](https://github.com/user-attachments/assets/614dd88b-9cd3-47c1-8bc6-d3c1fb3351e8)
 
