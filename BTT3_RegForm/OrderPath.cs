@@ -205,6 +205,22 @@ namespace BTT3_RegForm
         private void llabel_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
         }
+
+        private string HashSHA256(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+        
         private void ConnectionDatabase(User user)
         {
             string connectionString = "Server=localhost;Database=QUANLYKHACHHANG;Integrated Security=true;";
@@ -227,12 +243,12 @@ namespace BTT3_RegForm
                             return; 
                         }
                     }
-
+                    string hashedPass = HashSHA256(user.pass);
                     using (var cmd = new SqlCommand(sql, connection))
                     {
 
                         cmd.Parameters.AddWithValue("@username", user.username);
-                        cmd.Parameters.AddWithValue("@matkhau", user.pass);
+                        cmd.Parameters.AddWithValue("@matkhau", hashedPass);
                         cmd.Parameters.AddWithValue("@hoTen", user.fullName);
                         cmd.Parameters.AddWithValue("@email", user.email);
                         cmd.Parameters.AddWithValue("@soDienThoai", user.phone ?? (object)DBNull.Value);
