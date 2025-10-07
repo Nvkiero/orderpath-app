@@ -215,8 +215,22 @@ namespace BTT3_RegForm
                     connection.Open();
                     string sql = "insert into khachhang(username, matKhau, hoTen, email, soDienThoai, ngaySinh, gioitinh) " +
                                   "values(@username, @matkhau, @hoTen, @email, @soDienThoai, @ngaySinh, @gioitinh);";
+
+                    string check = "select count(*) from khachhang where username = @username;";
+                    using (var cmdCheck = new SqlCommand(check, connection))
+                    {
+                        cmdCheck.Parameters.AddWithValue("@username", user.username);
+                        int count = (int)cmdCheck.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Username đã tồn tại, vui lòng chọn tên khác.");
+                            return; 
+                        }
+                    }
+
                     using (var cmd = new SqlCommand(sql, connection))
                     {
+
                         cmd.Parameters.AddWithValue("@username", user.username);
                         cmd.Parameters.AddWithValue("@matkhau", user.pass);
                         cmd.Parameters.AddWithValue("@hoTen", user.fullName);
