@@ -32,7 +32,7 @@
             lb_tendangnhap = new Label();
             lb_passwd = new Label();
             btn_dangnhap = new Button();
-            button3 = new Button();
+            btn_DangKy = new Button();
             tb_tendangnhap = new MaskedTextBox();
             tb_passwd = new MaskedTextBox();
             SuspendLayout();
@@ -58,9 +58,9 @@
             lb_tendangnhap.Location = new Point(249, 95);
             lb_tendangnhap.Margin = new Padding(4, 0, 4, 0);
             lb_tendangnhap.Name = "lb_tendangnhap";
-            lb_tendangnhap.Size = new Size(275, 32);
+            lb_tendangnhap.Size = new Size(128, 32);
             lb_tendangnhap.TabIndex = 1;
-            lb_tendangnhap.Text = "Username/ Gmail/ SĐT";
+            lb_tendangnhap.Text = "Username";
             lb_tendangnhap.Click += label2_Click;
             // 
             // lb_passwd
@@ -86,17 +86,18 @@
             btn_dangnhap.UseVisualStyleBackColor = true;
             btn_dangnhap.Click += btn_dangnhap_Click;
             // 
-            // button3
+            // btn_DangKy
             // 
-            button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            button3.ForeColor = Color.Blue;
-            button3.Location = new Point(249, 504);
-            button3.Margin = new Padding(4, 5, 4, 5);
-            button3.Name = "button3";
-            button3.Size = new Size(403, 61);
-            button3.TabIndex = 5;
-            button3.Text = "Chưa có tài khoản? -> Đăng kí";
-            button3.UseVisualStyleBackColor = true;
+            btn_DangKy.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            btn_DangKy.ForeColor = Color.Blue;
+            btn_DangKy.Location = new Point(249, 504);
+            btn_DangKy.Margin = new Padding(4, 5, 4, 5);
+            btn_DangKy.Name = "btn_DangKy";
+            btn_DangKy.Size = new Size(403, 61);
+            btn_DangKy.TabIndex = 5;
+            btn_DangKy.Text = "Chưa có tài khoản? -> Đăng kí";
+            btn_DangKy.UseVisualStyleBackColor = true;
+            btn_DangKy.Click += btn3_formDangKy_Click;
             // 
             // tb_tendangnhap
             // 
@@ -112,6 +113,7 @@
             tb_passwd.Location = new Point(249, 283);
             tb_passwd.Margin = new Padding(4, 5, 4, 5);
             tb_passwd.Name = "tb_passwd";
+            tb_passwd.PasswordChar = '*';
             tb_passwd.Size = new Size(314, 39);
             tb_passwd.TabIndex = 7;
             // 
@@ -122,7 +124,7 @@
             ClientSize = new Size(1100, 630);
             Controls.Add(tb_passwd);
             Controls.Add(tb_tendangnhap);
-            Controls.Add(button3);
+            Controls.Add(btn_DangKy);
             Controls.Add(btn_dangnhap);
             Controls.Add(lb_passwd);
             Controls.Add(lb_tendangnhap);
@@ -141,7 +143,7 @@
         private Label lb_tendangnhap;
         private Label lb_passwd;
         private Button btn_dangnhap;
-        private Button button3;
+        private Button btn_DangKy;
         private MaskedTextBox tb_tendangnhap;
         private MaskedTextBox tb_passwd;
     }
