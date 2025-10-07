@@ -150,6 +150,17 @@ namespace BTT3_RegForm
             }
             return null;
         }
+        public class User
+        {
+            public string fullName { get; set; }
+            public DateTime? dob { get; set; }
+            public string gender { get; set; }
+            public string email { get; set; }
+            public string phone { get; set; }
+            public string address { get; set; }
+            public string username { get; set; }
+            public string pass { get; set; }
+        }
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
@@ -177,12 +188,53 @@ namespace BTT3_RegForm
                 MessageBox.Show(string.Join(Environment.NewLine, errors), "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            User user = new User()
+            {
+                fullName = fullName,
+                dob = dob,
+                gender = gender,
+                email = email,
+                phone = phone,
+                address = address,
+                username = username,
+                pass = pass
+            };
+            ConnectionDatabase(user);
         }
 
         private void llabel_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //ok
         }
+        private void ConnectionDatabase(User user)
+        {
+            string connectionString = "Server=localhost;Database=QUANLYKHACHHANG;Integrated Security=true;";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string sql = "insert into khachhang(username, matKhau, hoTen, email, soDienThoai, ngaySinh, gioitinh) " +
+                                  "values(@username, @matkhau, @hoTen, @email, @soDienThoai, @ngaySinh, @gioitinh);";
+                    using (var cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@username", user.username);
+                        cmd.Parameters.AddWithValue("@matkhau", user.pass);
+                        cmd.Parameters.AddWithValue("@hoTen", user.fullName);
+                        cmd.Parameters.AddWithValue("@email", user.email);
+                        cmd.Parameters.AddWithValue("@soDienThoai", user.phone ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@ngaySinh", user.dob ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@gioitinh", user.gender ?? (object)DBNull.Value);
+                        int affected = cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                    return; 
+                }
+                MessageBox.Show("Đăng ký thành công!");
+            }
+        }
+
     }
 }
