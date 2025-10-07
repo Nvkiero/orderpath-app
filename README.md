@@ -18,8 +18,7 @@
 1. Clone repo về máy: 
 2. Mở file `SignUpForm.sln` trong Visual Studio 
 3. Mở file database.sql trong SQL Server Management Studio và chạy để tạo cơ sở dữ liệu và bảng Users 
-4. Cập nhật chuỗi kết nối trong `DatabaseHelper.cs` 
-5. Chạy ứng dụng: Ctrl + F5
+4. Chạy ứng dụng: Ctrl + F5
 
 ## Sử dụng
 - Đăng ký tài khoản mới
