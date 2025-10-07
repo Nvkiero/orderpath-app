@@ -1,0 +1,15 @@
+﻿CREATE DATABASE QUANLYKHACHHANG
+
+DROP TABLE khachhang
+
+CREATE TABLE khachhang (
+    username NVARCHAR(40) NOT NULL PRIMARY KEY,
+    matKhau NVARCHAR(80) NULL,
+    hoTen NVARCHAR(50) NULL,
+    ngaySinh SMALLDATETIME NULL,
+    email NVARCHAR(40) NULL,
+    gioiTinh NVARCHAR(40) NULL,
+    soDienThoai NVARCHAR(20) NULL
+);
+
+SELECT *FROM khachhang
