@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Net.WebSockets;
+using ProjectTuan3;
 
 
 namespace BTT3_RegForm
@@ -204,6 +205,8 @@ namespace BTT3_RegForm
 
         private void llabel_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Form frm = new Form1();
+            frm.Show();
         }
 
         private string HashSHA256(string rawData)

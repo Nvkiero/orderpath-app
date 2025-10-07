@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Text;
 using System.Security.Cryptography;
+using BTT3_RegForm;
 namespace ProjectTuan3
 {
     public partial class Form1 : Form
@@ -118,7 +119,8 @@ namespace ProjectTuan3
 
         private void btn3_formDangKy_Click(object sender, EventArgs e)
         {
-
+            Form formDangKy = new OrderPath();
+            formDangKy.Show();
         }
     }
 }
