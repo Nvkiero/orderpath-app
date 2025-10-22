@@ -2,7 +2,8 @@
 using System.Text;
 using System.Security.Cryptography;
 using BTT3_RegForm;
-namespace ProjectTuan3
+using SignUpForm.TCPClient;
+namespace ProjectTuan3  
 {
     public partial class Form1 : Form
     {
