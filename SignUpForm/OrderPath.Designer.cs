@@ -61,6 +61,7 @@
             textBox2 = new TextBox();
             txb_userreal = new TextBox();
             groupBox10 = new GroupBox();
+            btn_server = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -426,11 +427,22 @@
             groupBox10.TabStop = false;
             groupBox10.Text = "Tên đăng nhập";
             // 
+            // btn_server
+            // 
+            btn_server.Location = new Point(894, 73);
+            btn_server.Name = "btn_server";
+            btn_server.Size = new Size(112, 106);
+            btn_server.TabIndex = 23;
+            btn_server.Text = "Kết nối server";
+            btn_server.UseVisualStyleBackColor = true;
+            btn_server.Click += btn_server_Click;
+            // 
             // OrderPath
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1056, 736);
+            Controls.Add(btn_server);
             Controls.Add(groupBox10);
             Controls.Add(groupBox9);
             Controls.Add(label1);
@@ -448,6 +460,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "OrderPath";
             Text = "OrderPath";
+            Load += OrderPath_Load_1;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -508,5 +521,6 @@
         private TextBox textBox2;
         private TextBox txb_userreal;
         private GroupBox groupBox10;
+        private Button btn_server;
     }
 }
