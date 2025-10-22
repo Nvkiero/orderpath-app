@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Net.WebSockets;
+using TCP;
 using ProjectTuan3;
 
 
@@ -223,7 +224,7 @@ namespace BTT3_RegForm
                 return builder.ToString();
             }
         }
-        
+
         private void ConnectionDatabase(User user)
         {
             string connectionString = "Server=localhost;Database=QUANLYKHACHHANG;Integrated Security=true;";
@@ -243,7 +244,7 @@ namespace BTT3_RegForm
                         if (count > 0)
                         {
                             MessageBox.Show("Username đã tồn tại, vui lòng chọn tên khác.");
-                            return; 
+                            return;
                         }
                     }
                     string hashedPass = HashSHA256(user.pass);
@@ -263,11 +264,20 @@ namespace BTT3_RegForm
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi: " + ex.Message);
-                    return; 
+                    return;
                 }
                 MessageBox.Show("Đăng ký thành công!");
             }
         }
 
+        private void OrderPath_Load_1(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_server_Click(object sender, EventArgs e)
+        {
+            TcpServer server = new TcpServer();
+            server.TcpOpen();
+        }
     }
 }
