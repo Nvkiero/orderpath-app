@@ -273,11 +273,26 @@ namespace BTT3_RegForm
         private void OrderPath_Load_1(object sender, EventArgs e)
         {
         }
-
+        private TcpServer server;
         private void btn_server_Click(object sender, EventArgs e)
         {
-            TcpServer server = new TcpServer();
-            server.TcpOpen();
+            if (server == null)
+            {
+                server = new TcpServer();
+
+                Task.Run(() =>
+                  {
+                      server.TcpOpen();
+                  });
+
+                MessageBox.Show(" Server đã được bật và đang lắng nghe trên cổng 9000!");
+                btn_server.Text = "Server đang chạy";
+                btn_server.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Server đã được bật rồi!");
+            }
         }
     }
 }
