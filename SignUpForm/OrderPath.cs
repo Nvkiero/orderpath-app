@@ -201,7 +201,7 @@ namespace BTT3_RegForm
                 username = username,
                 pass = pass
             };
-            ConnectionDatabase(user);
+            //ConnectionDatabase(user);
         }
 
         private void llabel_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
